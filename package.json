@@ -1,7 +1,7 @@
 {
   "name": "micro-mail",
   "description": "Microservice for sending emails",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "license": "MIT",
   "private": true,
   "author": {

@@ -1,7 +1,7 @@
 {
   "name": "micro-mail",
   "description": "Microservice for sending emails",
-  "version": "1.0.12",
+  "version": "1.1.0",
   "license": "MIT",
   "private": true,
   "author": {
@@ -11,7 +11,7 @@
   },
   "main": "index.js",
   "engines": {
-    "node": ">=8.1.2"
+    "node": ">=8.4.0"
   },
   "scripts": {
     "test": "standard && nsp check && ava",
@@ -19,6 +19,7 @@
     "coverage": "nyc ava",
     "coveralls": "nyc ava && nyc report --reporter=lcov && cat coverage/lcov.info | coveralls",
     "standard-fix": "standard --fix",
+    "dev": "micro-dev",
     "start": "micro",
     "now-deploy": "npm test && now --npm -E production.env && now alias"
   },
@@ -43,19 +44,20 @@
     "type": "npm"
   },
   "devDependencies": {
+    "ava": "0.22.0",
     "axios": "0.16.2",
-    "ava": "0.21.0",
     "coveralls": "2.13.1",
+    "micro-dev": "1.2.1",
     "nsp": "2.7.0",
     "nyc": "11.1.0",
     "standard": "10.0.3",
     "test-listen": "1.0.2"
   },
   "dependencies": {
-    "jsonwebtoken": "7.4.2",
+    "jsonwebtoken": "7.4.3",
     "marked": "0.3.6",
     "micro": "8.0.3",
-    "sendgrid": "5.2.1",
+    "sendgrid": "5.2.2",
     "winston": "2.3.1",
     "winston-papertrail": "1.0.5"
   }

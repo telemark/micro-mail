@@ -1,7 +1,7 @@
 {
   "name": "micro-mail",
   "description": "Microservice for sending emails",
-  "version": "1.1.6",
+  "version": "1.2.0",
   "license": "MIT",
   "private": true,
   "author": {
@@ -11,7 +11,7 @@
   },
   "main": "index.js",
   "engines": {
-    "node": ">=8.4.0"
+    "node": ">=8.6.0"
   },
   "scripts": {
     "test": "standard && nsp check && ava",
@@ -21,7 +21,7 @@
     "standard-fix": "standard --fix",
     "dev": "micro-dev",
     "start": "micro",
-    "now-deploy": "npm test && now --npm -E production.env && now alias"
+    "now-deploy": "npm test && now --npm && now alias"
   },
   "keywords": [
     "microservice",
@@ -41,7 +41,8 @@
     "alias": [
       "mail.service.t-fk.no"
     ],
-    "type": "npm"
+    "type": "npm",
+    "dotenv": "production"
   },
   "devDependencies": {
     "ava": "0.22.0",
@@ -54,10 +55,10 @@
     "test-listen": "1.0.2"
   },
   "dependencies": {
+    "@sendgrid/mail": "6.1.4",
     "jsonwebtoken": "8.0.1",
-    "marked": "0.3.6",
+    "markdown-it": "8.4.0",
     "micro": "9.0.0",
-    "sendgrid": "5.2.3",
     "winston": "2.3.1",
     "winston-papertrail": "1.0.5"
   }

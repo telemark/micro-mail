@@ -55,7 +55,7 @@
     "test-listen": "1.1.0"
   },
   "dependencies": {
-    "@sendgrid/mail": "6.1.4",
+    "@sendgrid/mail": "6.2.0",
     "jsonwebtoken": "8.1.0",
     "markdown-it": "8.4.0",
     "micro": "9.0.2",

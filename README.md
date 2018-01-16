@@ -3,6 +3,7 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/telemark/micro-mail.svg)](https://greenkeeper.io/)
 
 # micro-mail
+
 Microservice for sending emails
 
 ## API
@@ -11,7 +12,7 @@ All calls must supply a valid jwt
 
 ### ```POST /mail```
 
-Send sms
+Send mail
 
 ```JavaScript
 {

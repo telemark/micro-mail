@@ -38,16 +38,6 @@
     "url": "https://github.com/telemark/micro-mail/issues"
   },
   "homepage": "https://github.com/telemark/micro-mail#readme",
-  "now": {
-    "alias": [
-      "mail.service.t-fk.no"
-    ],
-    "type": "npm",
-    "dotenv": "production.env",
-    "engines": {
-      "node": ">=10.7.0"
-    }
-  },
   "devDependencies": {
     "ava": "0.25.0",
     "axios": "0.18.0",

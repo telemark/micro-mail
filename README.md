@@ -1,6 +1,5 @@
 [![Build Status](https://travis-ci.org/telemark/micro-mail.svg?branch=master)](https://travis-ci.org/telemark/micro-mail)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
-[![Greenkeeper badge](https://badges.greenkeeper.io/telemark/micro-mail.svg)](https://greenkeeper.io/)
 
 # micro-mail
 

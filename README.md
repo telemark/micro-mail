@@ -33,5 +33,3 @@ $ curl -v -H "Authorization: <INSERT TOKEN>" -d '{ "from": "from@example.com", "
 ## License
 
 [MIT](LICENSE)
-
-![Robohash image of micro-mail](https://robots.kebabstudios.party/micro-mail.png "Robohash image of micro-mail")

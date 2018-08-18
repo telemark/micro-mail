@@ -1,4 +1,5 @@
 const config = require('../config')
+const pkg = require('../../package.json')
 const winston = require('winston')
 require('winston-papertrail').Papertrail // eslint-disable-line no-unused-expressions
 
@@ -25,6 +26,6 @@ const logger = new (winston.Logger)({
 
 module.exports = (level, message) => {
   const data = Array.isArray(message) ? message : [message]
-  const logMessage = `${config.NAME} - ${config.VERSION}: ${data.join(' - ')}`
+  const logMessage = `${pkg.name} - ${pkg.version}: ${data.join(' - ')}`
   return logger.log(level, logMessage)
 }

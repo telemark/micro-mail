@@ -9,8 +9,8 @@ const getUrl = fn => {
   return listen(srv)
 }
 
-test('it returns README as if /docs', async t => {
+test('it returns README as if /', async t => {
   const url = await getUrl(srv)
-  const result = await axios.get(`${url}/docs`)
+  const result = await axios.get(`${url}`)
   t.true(result.data.includes('MIT'), 'frontpage ok')
 })

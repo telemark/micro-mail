@@ -1,23 +1,9 @@
-FROM node:10.9.0-alpine
+FROM mhart/alpine-node:10 as base
+WORKDIR /usr/src
+COPY package.json /usr/src/
+RUN npm i --production
 
-#### Begin setup ####
-
-# Installs git
-RUN apk add --update --no-cache git
-
-# Bundle app source
-COPY . /src
-
-# Change working directory
-WORKDIR "/src"
-
-# Install dependencies
-RUN npm install --production
-
-ENV NODE_ENV production
-
-# Expose 3000
-EXPOSE 3000
-
-# Startup
-ENTRYPOINT npm start
+FROM mhart/alpine-node:base-10
+WORKDIR /usr/src
+COPY --from=base /usr/src .
+CMD ["node", "./node_modules/.bin/micro"]

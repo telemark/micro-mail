@@ -1,11 +1,39 @@
 {
+  "version": 2,
   "name": "micro-mail",
+  "scope": "telemark",
   "alias": [
     "mail.service.t-fk.no"
   ],
-  "type": "docker",
-  "dotenv": "production.env",
-  "features": {
-    "cloud": "v2"
-  }
+  "env": {
+    "NODE_ENV": "production",
+    "JWT_SECRET": "@tfk-jwt-secret",
+    "SENDGRID_SECRET": "@tfk-sendgrid-secret",
+    "PAPERTRAIL_HOSTNAME": "mail-service",
+    "PAPERTRAIL_HOST": "@tfk-papertrail-host",
+    "PAPERTRAIL_PORT": "@tfk-papertrail-port"
+  },
+  "builds": [
+    {
+      "src": "/*.md",
+      "use": "@now/md"
+    },
+    {
+      "src": "/index.js",
+      "use": "@now/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/README.html"
+    },
+    { "src": "/favicon.ico",
+      "dest": "/static/favicon.ico"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.js"
+    }
+  ]
 }

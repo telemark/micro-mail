@@ -5,7 +5,6 @@ const jwt = require('express-jwt')
 
 // Utilities
 const handler = require('./lib/handler')
-const config = require('./config')
 const handleUnauthorized = require('./lib/handle-unauthorized')
 
 // Initialize a new router
@@ -15,11 +14,10 @@ const router = Router()
 router.use(cors())
 
 // JWT
-router.use(jwt({ secret: config.JWT_SECRET }).unless({ path: ['/'] }))
+router.use(jwt({ secret: process.env.JWT_SECRET }))
 router.use(handleUnauthorized)
 
 // ROUTES
-router.get('/', handler.getFrontpage)
 router.post('/mail', handler.deliverMail)
 
 module.exports = (request, response) => {

@@ -1,25 +1,17 @@
-const Router = require('router')
-const finalhandler = require('finalhandler')
-const cors = require('cors')
-const jwt = require('express-jwt')
+const { json, send } = require('micro')
+const sendMail = require('./lib/send-mail')
+const logger = require('./lib/logger')
 
-// Utilities
-const handler = require('./lib/handler')
-const handleUnauthorized = require('./lib/handle-unauthorized')
-
-// Initialize a new router
-const router = Router()
-
-// CORS
-router.use(cors())
-
-// JWT
-router.use(jwt({ secret: process.env.JWT_SECRET }))
-router.use(handleUnauthorized)
-
-// ROUTES
-router.post('/mail', handler.deliverMail)
-
-module.exports = (request, response) => {
-  router(request, response, finalhandler(request, response))
+async function deliverMail (request, response) {
+  const data = await json(request)
+  try {
+    const result = await sendMail(data)
+    logger('info', ['index', 'deliverMail', 'success'])
+    send(response, 200, result)
+  } catch (error) {
+    logger('error', ['index', 'deliverMail', error])
+    send(response, 500, error)
+  }
 }
+
+module.exports = require('./lib/check-token')(deliverMail)

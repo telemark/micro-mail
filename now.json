@@ -32,8 +32,13 @@
       "dest": "/static/favicon.ico"
     },
     {
-      "src": "/(.*)",
-      "dest": "/index.js"
+      "src": "/mail",
+      "dest": "/index.js",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization",
+        "Access-Control-Allow-Methods": "POST, OPTIONS"
+      }
     }
   ]
 }

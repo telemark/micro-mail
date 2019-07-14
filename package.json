@@ -46,7 +46,6 @@
   "dependencies": {
     "@sendgrid/mail": "6.4.0",
     "jsonwebtoken": "8.5.1",
-    "micro": "9.3.4",
     "winston": "2.4.4",
     "winston-papertrail": "1.0.5"
   }

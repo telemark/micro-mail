@@ -19,13 +19,11 @@
     "coverage": "nyc ava",
     "coveralls": "nyc ava && nyc report --reporter=lcov && cat coverage/lcov.info | coveralls",
     "standard-fix": "standard --fix",
-    "dev": "now dev",
     "deploy": "npm test && now --target production",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm install"
   },
   "keywords": [
     "microservice",
-    "micro",
     "mail",
     "Telemark fylkeskommune"
   ],
